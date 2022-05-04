@@ -1,0 +1,98 @@
+body{
+    background-color: rgb(223, 223, 223);
+    margin: 0%;
+
+}
+
+canvas{
+    z-index: 0;
+    position: absolute;
+    left: 5%;
+    
+    top: 50%;
+    
+    
+    margin-top: -300px;
+
+    /*z-index: 0;
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom:0;
+    margin-left: -200px;
+    margin-top: -200px; */
+}
+.button {
+    z-index: 1;
+    width: auto;
+    text-transform: lowercase;
+    font-family: 'Orbitron', sans-serif;
+    font-weight: 400;
+    font-size: 14px;
+    left: 30px;
+    top:30px;
+    width: 90px;
+    position: absolute;
+    color: rgb(14, 14, 14);
+    text-align: center;
+    cursor: pointer;
+    
+}
+.titolo{
+    z-index: 1;
+    width: auto;
+    text-transform: uppercase;
+    margin-left: -70px;
+    font-family: 'Orbitron', sans-serif;
+    font-weight: 800;
+    font-size: 20px;
+    position: absolute;
+    left: 50%;
+    top: 20px;
+    color: rgb(14, 14, 14);
+    
+}
+.frase{
+    z-index: 1;
+    width: auto;
+    
+    font-family: 'Orbitron', sans-serif;
+    font-weight: 400;
+    font-size: 50px;
+
+    position: absolute;
+    left: 50%;
+    top: 30%;
+    
+    color: rgb(14, 14, 14);
+}
+
+.contenitore{
+    z-index: 2;
+    position: absolute;
+    background-color: transparent;
+    width: 600px;
+    height: 600px;
+    left: 5%;
+    top: 50%;
+    
+    margin-top: -300px;
+}
+
+
+.interfaccia input[type="range"] {
+    height: 3px;
+    width: 200px;
+    position: absolute;
+    top: 60%;
+    left: 50%;
+   
+    appearance: none;
+    -webkit-appearance: none;
+    border: none;
+    background-color: rgb(14, 14, 14);
+    display: block;
+}
+
+
