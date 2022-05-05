@@ -11,7 +11,7 @@
 </head>
 <body>
    <div>
-		<a class="button" href="#"> indice </a>
+		<a class="button" href="https://ixd-supsi.github.io/specchiodellemiebrame/"> indice </a>
 	</div>
 
 
@@ -19,89 +19,118 @@
 		glass
 	</p>
 
+  <div class="cit">
     <p class="frase">
 		“Lascia parlare il tuo cuore,<br> interroga i volti,<br> non ascoltare le lingue...”
 	</p>
+  <p class="nome">
+		- Il nome della rosa, Umberto Eco
+	</p>
+</div>
 
-    <div class="contenitore">
-		<div class="filtro">
-			<img src="assets/filtro_0.png" alt="">
-		</div>
+
        
 		
 	</div>
-    <div class="interfaccia">
-
+  <div class="interfaccia">
 		
+    <label for="#ripetizione">ripetizione</label>
+		<input id="ripetizione" type="range" step="1" value="3" min="3" max="30">
 
-		<label for="#input-filtro"></label>
-		<input id="input-filtro" type="range" step="1" value="2" min="0" max="2">
+    <label for="#dimensione">dimesione</label>
+    <input id="dimensione" type="range" step="0.01" value="70" min="0" max="1000">
+
+    <label for="#centro">distanza centro</label>
+    <input id="centro" type="range" step="0.01" value="0" min="0" max="1000">
+
+    <label for="#u0">gestione immagine</label>
+		<input id="u0" type="range" step="1" value="0" min="0" max="3">
+    <label for="#v0"></label>
+		<input id="v0" type="range" step="1" value="0" min="0" max="2">
+
+    <label for="#u1"></label>
+		<input id="u1" type="range" step="1" value="0" min="0" max="3">
+    <label for="#v1"></label>
+		<input id="v1" type="range" step="1" value="0" min="0" max="2">
+
+    <label for="#u2"></label>
+		<input id="u2" type="range" step="1" value="0" min="0" max="3">
+    <label for="#v2"></label>
+		<input id="v2" type="range" step="1" value="0" min="0" max="2">
 
 
 
-
-	</div>
+  </div>
 	
     <script src="https://cdn.jsdelivr.net/npm/p5@1.4.1/lib/p5.js"></script>
 	<script>
 
-        document.querySelector("#input-filtro").addEventListener("input", function (e) {
-			const v = e.target.value
-			document.querySelector(".filtro img").src = "assets/filtro_" + v + ".png"
-			
-		})
 
 
 let vid;
 
 function setup() {
-  createCanvas(600, 600, WEBGL);
+  createCanvas(windowWidth, windowHeight, WEBGL);
   vid = createCapture(VIDEO)
   vid.hide()
-  angleMode(DEGREES)
 }
 
 function draw() {
   
   background(223,223,223);
+  
+  const r =300
+  const numero = document.querySelector("#ripetizione").value
+  const raggio = document.querySelector("#dimensione").value
+  const raggio0 = document.querySelector("#centro").value
+  const u0 = document.querySelector("#u0").value
+  const v0 = document.querySelector("#v0").value
+  const u1 = document.querySelector("#u1").value
+  const v1 = document.querySelector("#v1").value
+  const u2 = document.querySelector("#u2").value
+  const v2 = document.querySelector("#v2").value
 
-  //caleidoscopio
-  for (angle = 0; angle < 360; angle += 60) {
-    textureMode(NORMAL);
-    let r = 300
-    x = r * cos(angle)
-    y = r * sin(angle)
-    x2 = r * cos(60 + angle)
-    y2 = r * sin(60 + angle)
+
+  translate(-width*0.25, 0)
+  noStroke()
+  textureMode(NORMAL)
+
+  const fetta = TAU / numero
+  for (let i = 0; i < numero; i++) {
+
+
+
+    const a0 = fetta * i;
+    const a1 = a0 - fetta/2;
+    const a2 = a0 + fetta/2;
+    const x0 = cos(a0) * raggio0
+    const y0 = sin(a0) * raggio0
+    const x1 = cos(a1) * raggio
+    const y1 = sin(a1) * raggio
+    const x2 = cos(a2) * raggio
+    const y2 = sin(a2) * raggio
     texture(vid)
     beginShape(TRIANGLES);
-    vertex(0, 0, 0, 0);
-    vertex(x, y, 0, 1);
-    vertex(x2, y2, 1, 1);
+    vertex(x0, y0, u0, v0);
+    //vertex(x0, y0, 0, 0);
+    vertex(x1, y1, u1, v1);
+    //vertex(x1, y1, 0, 1);
+    vertex(x2, y2, u2, v2);
+    //vertex(x2, y2, 1, 1);
+    
+    
+    
+    
     endShape()
-    push()
-    noStroke()
-    fill(angle/2,angle)    
-  }
-   /*
-    //filtro
-    vid.loadPixels()
 
-for (let j=0; j<vid.height; j++) {
-    for (let i=0; i<vid.width; i++) {
-        const idx = (i + j * vid.width) * 4
-        const r = vid.pixels[idx + 0]
-        const g = vid.pixels[idx + 1]
-        const b = vid.pixels[idx + 2]
-        vid.pixels[idx + 0] = g
-		vid.pixels[idx + 1] = b
-		vid.pixels[idx + 2] = r
-    }
+  }
+    
 }
-vid.updatePixels()*/
-  
-  
-}
+function keyPressed(){
+			if (key == 's') {
+				save(Date.now() + '.png')
+			}
+		}
 
 	</script>
 	
