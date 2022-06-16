@@ -3,67 +3,61 @@
 <head>
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-	<link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&family=Press+Start+2P&display=swap" rel="stylesheet">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fahkwang:wght@300;400;600&display=swap" rel="stylesheet">
 	<title>glass</title>
 	<link rel="stylesheet" href="main.css">
 </head>
 <body>
-   <div>
+
+  <div class="header">
 		<a class="button" href="https://ixd-supsi.github.io/specchiodellemiebrame/"> indice </a>
-	</div>
-
-
-    <p class="titolo">
-		glass
-	</p>
+    <p class="titolo">glass</p>
+  </div>
 
   <div class="cit">
     <p class="frase">
 		“Lascia parlare il tuo cuore,<br> interroga i volti,<br> non ascoltare le lingue...”
-	</p>
-  <p class="nome">
+	  </p>
+    <p class="nome">
 		- Il nome della rosa, Umberto Eco
-	</p>
-</div>
+	  </p>
+  </div>
 
-
-       
-		
-	</div>
   <div class="interfaccia">
 		
+    <div class="input">
     <label for="#ripetizione">ripetizione</label>
-		<input id="ripetizione" type="range" step="1" value="3" min="3" max="30">
+		<input id="ripetizione" type="range" step="1" value="12" min="3" max="30">
 
     <label for="#dimensione">dimesione</label>
-    <input id="dimensione" type="range" step="0.01" value="70" min="0" max="1000">
+    <input id="dimensione" type="range" step="0.01" value="300" min="0" max="1000">
 
     <label for="#centro">distanza centro</label>
     <input id="centro" type="range" step="0.01" value="0" min="0" max="1000">
 
-    <label for="#u0">gestione immagine</label>
-		<input id="u0" type="range" step="1" value="0" min="0" max="3">
+    <label for="#u0">stretch lato 1</label>
+		<input id="u0" type="range" step="0.5" value="0.5" min="0" max="1">
     <label for="#v0"></label>
-		<input id="v0" type="range" step="1" value="0" min="0" max="2">
+		<input id="v0" type="range" step="0.5" value="1" min="0" max="1">
 
-    <label for="#u1"></label>
-		<input id="u1" type="range" step="1" value="0" min="0" max="3">
+    <label for="#u1">stretch lato 2</label>
+		<input id="u1" type="range" step="0.5" value="0.5" min="0" max="1">
     <label for="#v1"></label>
-		<input id="v1" type="range" step="1" value="0" min="0" max="2">
+		<input id="v1" type="range" step="0.5" value="0" min="0" max="1">
 
-    <label for="#u2"></label>
-		<input id="u2" type="range" step="1" value="0" min="0" max="3">
+    <label for="#u2">stretch lato 3</label>
+		<input id="u2" type="range" step="0.5" value="1" min="0" max="1">
     <label for="#v2"></label>
-		<input id="v2" type="range" step="1" value="0" min="0" max="2">
-
-
+		<input id="v2" type="range" step="0.5" value="0.5" min="0" max="1">
+  </div>
 
   </div>
 	
-    <script src="https://cdn.jsdelivr.net/npm/p5@1.4.1/lib/p5.js"></script>
-	<script>
+  <script src="https://cdn.jsdelivr.net/npm/p5@1.4.1/lib/p5.js"></script>
+	
+  <script>
 
 
 

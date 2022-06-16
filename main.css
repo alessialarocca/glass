@@ -1,78 +1,86 @@
 body{
     background-color: rgb(223, 223, 223);
     margin: 0%;
-
 }
-
 canvas{
     z-index: 0;
     position: absolute;    
-    
+}
+.header{
+    background-color: transparent;
+    width: 100vw;
+    height: 80px;
+    border-bottom: 1px;
+    border-top: 0;
+    border-left: 0;
+    border-right: 0;
+    border-style:solid;
 }
 .button {
     z-index: 1;
     width: auto;
     text-transform: lowercase;
-    font-family: 'Orbitron', sans-serif;
+    font-family: 'Fahkwang', sans-serif;
     font-weight: 400;
     font-size: 14px;
-    left: 30px;
+    right: 10px;
     top:30px;
     width: 90px;
     position: absolute;
     color: rgb(14, 14, 14);
     text-align: center;
-    cursor: pointer;
-    
+    cursor: pointer;  
+    text-decoration: none;
+}
+.button:hover{
+    text-decoration: underline;
 }
 .titolo{
     z-index: 1;
     width: auto;
     text-transform: uppercase;
-    margin-left: -70px;
-    font-family: 'Orbitron', sans-serif;
+    font-family: 'Fahkwang', sans-serif;
     font-weight: 800;
     font-size: 20px;
     position: absolute;
-    left: 50%;
-    top: 20px;
+    left: 30px;
+    top: 10px;
     color: rgb(14, 14, 14);
-    
+    text-align: left;
 }
 .cit{
- 
+    background-color: transparent;
+    width: 25%;
+    height: 100%;
+    border-left: 1px;
+    border-right: 0;
+    border-top: 0;
+    border-bottom: 0;
+    border-style:solid;
     z-index: 1;
     position: absolute;
-    left: 50%;
-    top: 20%;
-    
-    
+    left: 75%;
+    top: 80px;  
 }
 .frase{
+    margin-left: 10%;
+    margin-top: 50%;
     z-index: 1;
-    width: auto;
-    
-    font-family: 'Orbitron', sans-serif;
+    width: 80%;
+    font-family: 'Fahkwang', sans-serif;
     font-weight: 400;
-    font-size: 50px;
-
-  
-    
+    font-size: 40px;
     color: rgb(14, 14, 14);
 }
 .nome{
+    margin-left: 10%;
     z-index: 1;
     width: auto;
-    
-    font-family: 'Orbitron', sans-serif;
+    font-family: 'Fahkwang', sans-serif;
     font-weight: 400;
     font-size: 14px;
-
-  
-    
     color: rgb(14, 14, 14);
 }
-
 .contenitore{
     z-index: 1;
     position: absolute;
@@ -81,31 +89,39 @@ canvas{
     height: 600px;
     left: 5%;
     top: 50%;
-    
     margin-top: -300px;
 }
-
 .interfaccia{
+    width: 25%;
+    height: 100%;
+    border-left: 1px;
+    border-right: 0;
+    border-bottom: 0;
+    border-style:solid;
     z-index: 1;
     position: absolute;
-    top: 60%;
+    top: 80px;
     left: 50%;
     background-color: transparent;
-    font-family: 'Orbitron', sans-serif;
+    font-family: 'Fahkwang', sans-serif;
     font-weight: 400;
     font-size: 12px;
+    border-top: 200px;
 }
-
 .interfaccia input[type="range"] {
     height: 3px;
-    width: 400px;
-    margin-bottom: 10px;
+    width: 90%;
+    margin-bottom: 25px;
     display: block;
     appearance: none;
     -webkit-appearance: none;
     border: none;
     background-color: rgb(14, 14, 14);
     display: block;
+}
+.input{
+    margin-top: 50%;
+    margin-left: 10%;
 }
 
 
